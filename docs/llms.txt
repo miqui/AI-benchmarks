@@ -1,0 +1,26 @@
+# AI Benchmarks
+
+> A durable reference of the most popular AI leaderboards and benchmarks — what each one actually tells you, its caveats, and how to use it when evaluating a new model release. Triangulate human preference, fresh contamination-resistant tests, real agent evals, multimodal benchmarks, and deployment economics; no single leaderboard is definitive.
+
+## Docs
+
+- [Home](https://miqui.github.io/AI-benchmarks/): Start here — the 5-step release-review checklist and the compact 8-bookmark set
+- [Core Leaderboards](https://miqui.github.io/AI-benchmarks/core-leaderboards/): The 12 core boards (LMArena, Artificial Analysis, Scale SEAL, LiveBench, SWE-bench, Terminal-Bench, MTEB, HELM, and more) plus aggregators and discovery indexes
+- [Open Models](https://miqui.github.io/AI-benchmarks/open-models/): Hugging Face Open LLM Leaderboard and guidance for evaluating open-weight/self-hostable models
+- [General Reasoning](https://miqui.github.io/AI-benchmarks/general-reasoning/): MMLU-Pro, GPQA Diamond, SimpleBench, Humanity's Last Exam, LiveBench — difficult knowledge and reasoning, not production-domain accuracy
+- [Math](https://miqui.github.io/AI-benchmarks/math/): AIME, HMMT, MATH-500, GSM8K — symbolic and contest-style problem solving
+- [Coding Agents](https://miqui.github.io/AI-benchmarks/coding-agents/): SWE-bench (Verified/Pro), Terminal-Bench, Bug Hunt Bench, LiveCodeBench, Aider, Artificial Analysis coding agents; includes the find-bugs-vs-fix-issue distinction and the model+harness+effort caveat
+- [Code Generation](https://miqui.github.io/AI-benchmarks/code-generation/): LiveCodeBench, BigCodeBench, HumanEval+, MBPP+ — function-level coding ability
+- [Long Context](https://miqui.github.io/AI-benchmarks/long-context/): RULER, LongBench v2, InfiniteBench, needle-in-a-haystack variants — usable-context recall, not advertised window size
+- [Multimodal](https://miqui.github.io/AI-benchmarks/multimodal/): MMMU/MMMU-Pro, MathVista, ChartQA, DocVQA, Video-MME, Vision Arena, VLMEvalKit — visual, document, chart, and video understanding
+- [Tool Use & Agents](https://miqui.github.io/AI-benchmarks/tool-use-agents/): ToolBench, BFCL, tau-bench, GAIA, Toolathlon — function calling, schema adherence, stateful workflows, MCP relevance
+- [RAG & Retrieval](https://miqui.github.io/AI-benchmarks/rag-retrieval/): MTEB, BEIR, MIRACL, LoCoV0 — embedding/retrieval quality; always pair with your own corpus evals
+- [Multilingual](https://miqui.github.io/AI-benchmarks/multilingual/): Global-MMLU, FLORES-200, multilingual MTEB, MGSM — quality across languages and locales
+- [Safety](https://miqui.github.io/AI-benchmarks/safety/): HELM, DecodingTrust, SafetyBench, HarmBench, WildGuard — robustness, refusal behavior, jailbreak resilience
+- [Efficiency & Economics](https://miqui.github.io/AI-benchmarks/efficiency-economics/): Artificial Analysis, provider pricing/latency dashboards, load tests — cost, speed, rate limits, production fit
+- [Release-Review Workflow](https://miqui.github.io/AI-benchmarks/release-review-workflow/): The 5-step gate from Arena/Artificial Analysis scan to staging-canary promotion
+- [Pitfalls](https://miqui.github.io/AI-benchmarks/pitfalls/): Benchmark contamination, self-reported scores, composite-rank weighting, harness confounds — why a 5th-place model can be the best production choice
+
+## Optional
+
+- [Full reference (llms-full.txt)](https://miqui.github.io/AI-benchmarks/llms-full.txt): Complete contents of all pages above in one file
