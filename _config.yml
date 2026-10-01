@@ -1,0 +1,14 @@
+title: AI Benchmarks
+description: A durable reference of the most popular AI leaderboards and benchmarks, updated per model release.
+remote_theme: just-the-docs/just-the-docs
+search_enabled: true
+heading_anchors: true
+nav_sort: pages
+permalink: pretty
+
+plugins:
+  - jekyll-remote-theme
+
+aux_links:
+  "GitHub repo":
+    - "https://github.com/miqui/AI-benchmarks"
