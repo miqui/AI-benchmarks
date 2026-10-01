@@ -11,7 +11,8 @@ plugins:
 
 defaults:
   - scope:
-      path: "docs"
+      path: ""
+      type: "pages"
     values:
       layout: default
 
