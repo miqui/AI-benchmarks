@@ -1,0 +1,23 @@
+{%-comment-%}
+  Mr. Green Jekyll Theme (https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme)
+  Copyright (c) 2022 Mr. Green's Workshop https://www.MrGreensWorkshop.com
+  Licensed under MIT
+
+  Modified for AI Benchmarks: the stock theme renders one nav button per
+  _layouts file (home, post-list, archives, projects, links, about). This
+  site instead has 16 content pages sharing a single "page" layout, so
+  navigation is driven by _data/nav/pages.yml (title/icon/url, in display
+  order) rather than by layout name.
+{%-endcomment-%}
+
+{%- for nav_item in site.data.nav.pages -%}
+  {%- assign icon_tag = '' -%}
+  {%- assign active_class = '' -%}
+  {%- assign nav_url = nav_item.url | relative_url -%}
+  {%- assign current_url = page.url | relative_url -%}
+  {%- if current_url == nav_url -%}{%- assign active_class = 'active-page' -%}{%- endif -%}
+  {%- if site.data.conf.main.side_and_top_nav_button_icons == true -%}
+    {%- capture icon_tag -%} <i class="{{ 'fa-fw ' }}{{ nav_item.icon }}" aria-hidden="true"></i> {%- endcapture -%}
+  {%- endif -%}
+  <li><a href="{{ nav_url }}" class="{{ active_class }} {{ include.effect }}">{{ icon_tag }}{{ nav_item.title }}</a></li>
+{%- endfor -%}
