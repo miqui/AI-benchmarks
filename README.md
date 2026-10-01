@@ -2,36 +2,42 @@
 
 A durable, markdown reference of the most popular AI leaderboards and benchmarks — what each one actually tells you, its caveats, and how to use it when evaluating a new model release.
 
-Served as a GitHub Pages site (Jekyll + just-the-docs) from `docs/`: **https://miqui.github.io/AI-benchmarks/**
+Served as a GitHub Pages site (Jekyll + [Mr. Green Jekyll Theme](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme), pinned at `v1.3.2`) from the repo root: **https://miqui.github.io/AI-benchmarks/**
 
 ## Repo map
 
 ```
 AI-benchmarks/
 ├── README.md                       # this file
-├── _config.yml                     # Jekyll / just-the-docs config
-└── docs/
-    ├── index.md                    # START HERE: 5-step release-review checklist + 8-bookmark set
-    ├── core-leaderboards.md        # the 12 core boards + aggregators/discovery indexes
-    ├── open-models.md              # HF Open LLM Leaderboard + open-weight guidance
-    ├── general-reasoning.md        # MMLU-Pro, GPQA Diamond, SimpleBench, HLE, LiveBench
-    ├── math.md                     # AIME, HMMT, MATH-500, GSM8K
-    ├── coding-agents.md            # SWE-bench, Terminal-Bench, Bug Hunt Bench, LiveCodeBench, Aider, AA Coding Agents
-    ├── code-generation.md          # LiveCodeBench, BigCodeBench, HumanEval+, MBPP+
-    ├── long-context.md             # RULER, LongBench v2, InfiniteBench, NIAH variants
-    ├── multimodal.md               # MMMU/MMMU-Pro, MathVista, ChartQA, DocVQA, Video-MME, Vision Arena, VLMEvalKit
-    ├── tool-use-agents.md          # ToolBench, BFCL, tau-bench, GAIA, Toolathlon
-    ├── rag-retrieval.md            # MTEB, BEIR, MIRACL, LoCoV0
-    ├── multilingual.md             # Global-MMLU, FLORES-200, multilingual MTEB, MGSM
-    ├── safety.md                   # HELM, DecodingTrust, SafetyBench, HarmBench, WildGuard
-    ├── efficiency-economics.md     # Artificial Analysis, pricing/latency, own load tests
-    ├── release-review-workflow.md  # the full 5-step workflow incl. internal release gate
-    └── pitfalls.md                 # contamination, self-reported scores, composite-rank caution, harness confounds
+├── _config.yml                     # Jekyll / Mr. Green theme config (url, baseurl, plugins)
+├── _data/                          # theme data: conf/ (main.yml incl. search_enable), lang/, owner/, nav/pages.yml (our nav)
+├── _includes/, _layouts/, assets/  # theme templates/styles/JS (incl. on-site search UI + index)
+├── query/search.json               # builds the search index from our 16 pages
+├── index.md                        # START HERE: 5-step release-review checklist + 8-bookmark set (site Home, permalink /)
+├── core-leaderboards.md            # the 12 core boards + aggregators/discovery indexes
+├── open-models.md                  # HF Open LLM Leaderboard + open-weight guidance
+├── general-reasoning.md            # MMLU-Pro, GPQA Diamond, SimpleBench, HLE, LiveBench
+├── math.md                         # AIME, HMMT, MATH-500, GSM8K
+├── coding-agents.md                # SWE-bench, Terminal-Bench, Bug Hunt Bench, LiveCodeBench, Aider, AA Coding Agents
+├── code-generation.md              # LiveCodeBench, BigCodeBench, HumanEval+, MBPP+
+├── long-context.md                 # RULER, LongBench v2, InfiniteBench, NIAH variants
+├── multimodal.md                   # MMMU/MMMU-Pro, MathVista, ChartQA, DocVQA, Video-MME, Vision Arena, VLMEvalKit
+├── tool-use-agents.md              # ToolBench, BFCL, tau-bench, GAIA, Toolathlon
+├── rag-retrieval.md                # MTEB, BEIR, MIRACL, LoCoV0
+├── multilingual.md                 # Global-MMLU, FLORES-200, multilingual MTEB, MGSM
+├── safety.md                       # HELM, DecodingTrust, SafetyBench, HarmBench, WildGuard
+├── efficiency-economics.md         # Artificial Analysis, pricing/latency, own load tests
+├── release-review-workflow.md      # the full 5-step workflow incl. internal release gate
+├── pitfalls.md                     # contamination, self-reported scores, composite-rank caution, harness confounds
+├── llms.txt / llms-full.txt        # machine-readable index / full content for LLM consumption
+└── 404.md, robots.txt              # theme pages, kept
 ```
+
+Each content page uses the theme's `page` layout with an explicit `permalink:` in its front matter, so URLs are unchanged from before the theme migration (e.g. `/AI-benchmarks/core-leaderboards/`).
 
 ## How to update this repo on a new model release
 
-1. Open `docs/release-review-workflow.md` and run the 5-step checklist against the new model.
+1. Open `release-review-workflow.md` and run the 5-step checklist against the new model.
 2. For each relevant capability page, check whether the leaderboard has since added the model; no content changes are usually needed — these pages link to *living* leaderboards, they don't snapshot scores.
 3. Only edit page content when: a benchmark is deprecated/superseded, a new benchmark becomes a core reference, a link changes, or a caveat needs updating based on something learned during the release review (e.g. a harness confound discovered in practice).
 4. Keep every URL exactly as sourced — do not invent or guess links.
