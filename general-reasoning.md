@@ -14,8 +14,8 @@ permalink: /general-reasoning/
 | Humanity's Last Exam (HLE) | Extremely hard, broad-domain frontier knowledge/reasoning probe | Difficult knowledge/reasoning; not production-domain accuracy |
 | LiveBench | Fresh, contamination-resistant general capability across reasoning, math, coding, language, data analysis | Frequently refreshed questions — best used for cross-model relative ranking rather than absolute score tracking over time |
 
-*The source material lists these benchmark names without dedicated individual URLs; track them via the aggregators in [core-leaderboards](/core-leaderboards/) (Artificial Analysis, BenchLM, llm-stats.com) or via LiveBench directly: [https://livebench.ai*](https://livebench.ai*)
+*The source material lists these benchmark names without dedicated individual URLs; track them via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/) (Artificial Analysis, BenchLM, llm-stats.com) or via LiveBench directly: [https://livebench.ai*](https://livebench.ai*)
 
 ## When to check this on a new model release
 
-Step 2 of the [release-review-workflow](/release-review-workflow/) for a "general" release: LiveBench + GPQA Diamond/MMLU-Pro. Useful as a first filter before task-specific validation (coding, multimodal, agents, etc.) — see [pitfalls](/pitfalls/) on why a high score here doesn't predict production performance.
+Step 2 of the [release-review-workflow](/AI-benchmarks/release-review-workflow/) for a "general" release: LiveBench + GPQA Diamond/MMLU-Pro. Useful as a first filter before task-specific validation (coding, multimodal, agents, etc.) — see [pitfalls](/AI-benchmarks/pitfalls/) on why a high score here doesn't predict production performance.

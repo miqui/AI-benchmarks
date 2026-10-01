@@ -13,8 +13,8 @@ permalink: /math/
 | MATH-500 | Curated hard math problem subset | Symbolic reasoning depth, not applied/agentic math |
 | GSM8K | Grade-school arithmetic word problems | Largely saturated by frontier models; low signal for differentiating top models today |
 
-*Track current standings via the aggregators in [core-leaderboards](/core-leaderboards/) and LiveBench's math slice: [https://livebench.ai*](https://livebench.ai*)
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/) and LiveBench's math slice: [https://livebench.ai*](https://livebench.ai*)
 
 ## When to check this on a new model release
 
-Check if the release targets reasoning/math capability explicitly, or if your workload includes quantitative/symbolic tasks. Treat strong math scores as necessary-not-sufficient: pair with [coding-agents](/coding-agents/) or [tool-use-agents](/tool-use-agents/) if the real task involves using math inside a larger workflow (per [pitfalls](/pitfalls/), contest math doesn't predict tool-using performance).
+Check if the release targets reasoning/math capability explicitly, or if your workload includes quantitative/symbolic tasks. Treat strong math scores as necessary-not-sufficient: pair with [coding-agents](/AI-benchmarks/coding-agents/) or [tool-use-agents](/AI-benchmarks/tool-use-agents/) if the real task involves using math inside a larger workflow (per [pitfalls](/AI-benchmarks/pitfalls/), contest math doesn't predict tool-using performance).

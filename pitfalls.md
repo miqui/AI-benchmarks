@@ -22,7 +22,7 @@ Avoid composite "best model" boards as primary truth — a single blended rankin
 
 ## Harness confounds
 
-Agentic benchmarks (SWE-bench, Bug Hunt Bench, Terminal-Bench, GAIA, tau-bench) rank a **model + harness + effort/reasoning-level + tool access + retry policy + compute budget** combination, not a pure foundation-model capability. Two entries using the same base model but different harnesses or effort settings are not comparable. See [coding-agents](/coding-agents/) for the detailed Bug Hunt Bench example.
+Agentic benchmarks (SWE-bench, Bug Hunt Bench, Terminal-Bench, GAIA, tau-bench) rank a **model + harness + effort/reasoning-level + tool access + retry policy + compute budget** combination, not a pure foundation-model capability. Two entries using the same base model but different harnesses or effort settings are not comparable. See [coding-agents](/AI-benchmarks/coding-agents/) for the detailed Bug Hunt Bench example.
 
 ## "5th place can win in production"
 
@@ -33,4 +33,4 @@ A model ranked 5th on a capability leaderboard can be the best production choice
 - data handling and context window fit
 - cost per *successful* workflow (not just cost per token)
 
-Triangulate: human preference ([core-leaderboards](/core-leaderboards/)) + fresh contamination-resistant tests ([general-reasoning](/general-reasoning/)) + real agent evals ([tool-use-agents](/tool-use-agents/), [coding-agents](/coding-agents/)) + multimodal ([multimodal](/multimodal/)) + deployment economics ([efficiency-economics](/efficiency-economics/)) — then run your own internal release gate (step 4 of [release-review-workflow](/release-review-workflow/)) before trusting any single board's ranking for a production decision.
+Triangulate: human preference ([core-leaderboards](/AI-benchmarks/core-leaderboards/)) + fresh contamination-resistant tests ([general-reasoning](/AI-benchmarks/general-reasoning/)) + real agent evals ([tool-use-agents](/AI-benchmarks/tool-use-agents/), [coding-agents](/AI-benchmarks/coding-agents/)) + multimodal ([multimodal](/AI-benchmarks/multimodal/)) + deployment economics ([efficiency-economics](/AI-benchmarks/efficiency-economics/)) — then run your own internal release gate (step 4 of [release-review-workflow](/AI-benchmarks/release-review-workflow/)) before trusting any single board's ranking for a production decision.

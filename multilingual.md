@@ -10,12 +10,12 @@ permalink: /multilingual/
 |---|---|
 | Global-MMLU | Knowledge/reasoning quality across many languages and locales, with cultural-sensitivity annotations |
 | FLORES-200 | Machine translation quality across 200 languages |
-| Multilingual MTEB | Embedding/retrieval quality across languages (subset of the MTEB family — see [rag-retrieval](/rag-retrieval/)) |
+| Multilingual MTEB | Embedding/retrieval quality across languages (subset of the MTEB family — see [rag-retrieval](/AI-benchmarks/rag-retrieval/)) |
 | MGSM | Grade-school math reasoning translated across languages |
 
 **What it tells you:** Quality across languages/locales — critical when a model's English-language benchmark scores don't reflect performance in the languages your users actually use.
 
-*Track current standings via the aggregators in [core-leaderboards](/core-leaderboards/).*
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/).*
 
 ## When to check this on a new model release
 

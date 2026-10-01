@@ -14,8 +14,8 @@ permalink: /safety/
 | HarmBench | Standardized red-teaming/jailbreak-resistance evaluation | track via aggregators |
 | WildGuard | Safety moderation and harmful-content detection evaluation | track via aggregators |
 
-**What it tells you:** Robustness, refusal behavior, bias, and jailbreak resilience. Scale AI's SEAL leaderboard (see [core-leaderboards](/core-leaderboards/)) also includes 20+ safety-alignment benchmarks.
+**What it tells you:** Robustness, refusal behavior, bias, and jailbreak resilience. Scale AI's SEAL leaderboard (see [core-leaderboards](/AI-benchmarks/core-leaderboards/)) also includes 20+ safety-alignment benchmarks.
 
 ## When to check this on a new model release
 
-Part of step 5 (operational validation) in [release-review-workflow](/release-review-workflow/): prompt-injection resistance and privacy posture specifically. Always cross-check safety claims against your own adversarial testing — safety benchmarks are especially prone to the self-reported-score and vendor-optimization issues covered in [pitfalls](/pitfalls/).
+Part of step 5 (operational validation) in [release-review-workflow](/AI-benchmarks/release-review-workflow/): prompt-injection resistance and privacy posture specifically. Always cross-check safety claims against your own adversarial testing — safety benchmarks are especially prone to the self-reported-score and vendor-optimization issues covered in [pitfalls](/AI-benchmarks/pitfalls/).

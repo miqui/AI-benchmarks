@@ -34,4 +34,4 @@ Bug Hunt (and most agentic coding leaderboards) rank a **model + harness + effor
 
 ## When to check this on a new model release
 
-Step 2 of [release-review-workflow](/release-review-workflow/) for a coding release: SWE-bench Verified/Pro + Terminal-Bench + LiveCodeBench, cross-checked against Bug Hunt Bench if autonomous bug discovery matters to your workload. Always record the harness/effort configuration alongside the score, and run your own internal release gate (step 4) mirroring real repos before promoting.
+Step 2 of [release-review-workflow](/AI-benchmarks/release-review-workflow/) for a coding release: SWE-bench Verified/Pro + Terminal-Bench + LiveCodeBench, cross-checked against Bug Hunt Bench if autonomous bug discovery matters to your workload. Always record the harness/effort configuration alongside the score, and run your own internal release gate (step 4) mirroring real repos before promoting.

@@ -15,7 +15,7 @@ permalink: /long-context/
 
 **Caveat:** Recall/reasoning with long inputs — synthetic retrieval (especially NIAH) can overstate usable context; a model finding one needle doesn't mean it reasons well across the *whole* long context under real multi-fact, multi-hop conditions.
 
-*Track current standings via the aggregators in [core-leaderboards](/core-leaderboards/).*
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/).*
 
 ## When to check this on a new model release
 

@@ -22,7 +22,7 @@ This site tracks the benchmarks and leaderboards worth checking on every new mod
 4. **Run an internal release gate:** 25–100 versioned tests mirroring actual workloads (OpenAPI/MCP tool selection, OAuth-aware calls, schema validation, API error repair, incident analysis, code changes, policy-sensitive tasks). Capture quality, tool-call correctness, latency, token use, cost, failure mode.
 5. **Promote only after operational validation:** rate-limit behavior, structured-output reliability, prompt-injection resistance, privacy posture, regional availability, observability — run a staging canary behind a model gateway.
 
-Full detail: [release-review-workflow](/release-review-workflow/).
+Full detail: [release-review-workflow](/AI-benchmarks/release-review-workflow/).
 
 ## Compact 8-bookmark set
 
@@ -39,6 +39,6 @@ Full detail: [release-review-workflow](/release-review-workflow/).
 
 ## Map of this reference
 
-See the sidebar for all capability pages: [core-leaderboards](/core-leaderboards/), [open-models](/open-models/), [general-reasoning](/general-reasoning/), [math](/math/), [coding-agents](/coding-agents/), [code-generation](/code-generation/), [long-context](/long-context/), [multimodal](/multimodal/), [tool-use-agents](/tool-use-agents/), [rag-retrieval](/rag-retrieval/), [multilingual](/multilingual/), [safety](/safety/), [efficiency-economics](/efficiency-economics/), [pitfalls](/pitfalls/).
+See the sidebar for all capability pages: [core-leaderboards](/AI-benchmarks/core-leaderboards/), [open-models](/AI-benchmarks/open-models/), [general-reasoning](/AI-benchmarks/general-reasoning/), [math](/AI-benchmarks/math/), [coding-agents](/AI-benchmarks/coding-agents/), [code-generation](/AI-benchmarks/code-generation/), [long-context](/AI-benchmarks/long-context/), [multimodal](/AI-benchmarks/multimodal/), [tool-use-agents](/AI-benchmarks/tool-use-agents/), [rag-retrieval](/AI-benchmarks/rag-retrieval/), [multilingual](/AI-benchmarks/multilingual/), [safety](/AI-benchmarks/safety/), [efficiency-economics](/AI-benchmarks/efficiency-economics/), [pitfalls](/AI-benchmarks/pitfalls/).
 
-No leaderboard is definitive — see [pitfalls](/pitfalls/) before trusting any single number.
+No leaderboard is definitive — see [pitfalls](/AI-benchmarks/pitfalls/) before trusting any single number.

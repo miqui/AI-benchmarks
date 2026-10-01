@@ -34,4 +34,4 @@ The 12 boards worth knowing, plus aggregators and discovery indexes.
 
 ## When to check this on a new model release
 
-Always — this is step 1 of the [release-review-workflow](/release-review-workflow/). Start with Arena + Artificial Analysis for the broad capability/price/speed profile before drilling into category-specific pages.
+Always — this is step 1 of the [release-review-workflow](/AI-benchmarks/release-review-workflow/). Start with Arena + Artificial Analysis for the broad capability/price/speed profile before drilling into category-specific pages.
