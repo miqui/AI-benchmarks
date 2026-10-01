@@ -20,4 +20,4 @@ permalink: /multimodal/
 
 ## When to check this on a new model release
 
-Step 2 of [release-review-workflow](/release-review-workflow/) for a multimodal release: MMMU-Pro + DocVQA/ChartQA + Vision Arena. If your workload is document-specific, weight DocVQA/ChartQA higher than general Arena preference.
+Step 2 of [release-review-workflow](/AI-benchmarks/release-review-workflow/) for a multimodal release: MMMU-Pro + DocVQA/ChartQA + Vision Arena. If your workload is document-specific, weight DocVQA/ChartQA higher than general Arena preference.

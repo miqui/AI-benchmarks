@@ -18,8 +18,8 @@ permalink: /tool-use-agents/
 
 **Relevance to MCP:** Toolathlon and BFCL are the most directly relevant to MCP-based tool orchestration — check schema adherence and multi-tool sequencing specifically, not just single-call accuracy.
 
-*Track current standings via the aggregators in [core-leaderboards](/core-leaderboards/).*
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/).*
 
 ## When to check this on a new model release
 
-Step 2 of [release-review-workflow](/release-review-workflow/) for an agentic release: GAIA/tau-bench/Toolathlon + your own internal tool-call trace eval. This is also where the step-4 internal release gate matters most — OpenAPI/MCP tool selection, OAuth-aware calls, schema validation, and API error repair rarely show up fully in public boards.
+Step 2 of [release-review-workflow](/AI-benchmarks/release-review-workflow/) for an agentic release: GAIA/tau-bench/Toolathlon + your own internal tool-call trace eval. This is also where the step-4 internal release gate matters most — OpenAPI/MCP tool selection, OAuth-aware calls, schema validation, and API error repair rarely show up fully in public boards.
