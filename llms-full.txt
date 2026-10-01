@@ -1,6 +1,111 @@
 # AI Benchmarks — full reference
 > Complete contents of all pages in the AI Benchmarks reference.
 
+## 404
+
+Source: https://miqui.github.io/AI-benchmarks/404/
+
+
+
+## Readme
+
+Source: https://miqui.github.io/AI-benchmarks/README/
+
+# AI-benchmarks
+
+A durable, markdown reference of the most popular AI leaderboards and benchmarks — what each one actually tells you, its caveats, and how to use it when evaluating a new model release.
+
+Served as a GitHub Pages site (Jekyll + [Mr. Green Jekyll Theme](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme), pinned at `v1.3.2`) from the repo root: **https://miqui.github.io/AI-benchmarks/**
+
+## Repo map
+
+```
+AI-benchmarks/
+├── README.md                       # this file
+├── _config.yml                     # Jekyll / Mr. Green theme config (url, baseurl, plugins)
+├── _data/                          # theme data: conf/ (main.yml incl. search_enable), lang/, owner/, nav/pages.yml (our nav)
+├── _includes/, _layouts/, assets/  # theme templates/styles/JS (incl. on-site search UI + index)
+├── query/search.json               # builds the search index from our 16 pages
+├── index.md                        # START HERE: 5-step release-review checklist + 8-bookmark set (site Home, permalink /)
+├── core-leaderboards.md            # the 12 core boards + aggregators/discovery indexes
+├── open-models.md                  # HF Open LLM Leaderboard + open-weight guidance
+├── general-reasoning.md            # MMLU-Pro, GPQA Diamond, SimpleBench, HLE, LiveBench
+├── math.md                         # AIME, HMMT, MATH-500, GSM8K
+├── coding-agents.md                # SWE-bench, Terminal-Bench, Bug Hunt Bench, LiveCodeBench, Aider, AA Coding Agents
+├── code-generation.md              # LiveCodeBench, BigCodeBench, HumanEval+, MBPP+
+├── long-context.md                 # RULER, LongBench v2, InfiniteBench, NIAH variants
+├── multimodal.md                   # MMMU/MMMU-Pro, MathVista, ChartQA, DocVQA, Video-MME, Vision Arena, VLMEvalKit
+├── tool-use-agents.md              # ToolBench, BFCL, tau-bench, GAIA, Toolathlon
+├── rag-retrieval.md                # MTEB, BEIR, MIRACL, LoCoV0
+├── multilingual.md                 # Global-MMLU, FLORES-200, multilingual MTEB, MGSM
+├── safety.md                       # HELM, DecodingTrust, SafetyBench, HarmBench, WildGuard
+├── efficiency-economics.md         # Artificial Analysis, pricing/latency, own load tests
+├── release-review-workflow.md      # the full 5-step workflow incl. internal release gate
+├── pitfalls.md                     # contamination, self-reported scores, composite-rank caution, harness confounds
+├── llms.txt / llms-full.txt        # machine-readable index / full content for LLM consumption
+└── 404.md, robots.txt              # theme pages, kept
+```
+
+Each content page uses the theme's `page` layout with an explicit `permalink:` in its front matter, so URLs are unchanged from before the theme migration (e.g. `/AI-benchmarks/core-leaderboards/`).
+
+## How to update this repo on a new model release
+
+1. Open `release-review-workflow.md` and run the 5-step checklist against the new model.
+2. For each relevant capability page, check whether the leaderboard has since added the model; no content changes are usually needed — these pages link to *living* leaderboards, they don't snapshot scores.
+3. Only edit page content when: a benchmark is deprecated/superseded, a new benchmark becomes a core reference, a link changes, or a caveat needs updating based on something learned during the release review (e.g. a harness confound discovered in practice).
+4. Keep every URL exactly as sourced — do not invent or guess links.
+5. Open a PR (branch protection requires 1 approval before merge into `main`).
+
+## GitHub Pages limits (respected here)
+
+Pure markdown docs are trivially within GitHub Pages limits:
+- Repo size ≤ 1 GB
+- Published site ≤ 1 GB
+- Bandwidth: 100 GB/month soft limit
+
+## License
+
+Content is a curated reference of publicly available benchmark leaderboards; links point to their original sources.
+
+## Bug Hunt
+
+Source: https://miqui.github.io/AI-benchmarks/bug-hunt/
+
+# Bug Hunt Bench
+
+Autonomous bug discovery and repair: the agent gets repositories **without being told what's wrong** and must find and fix planted bugs.
+
+## What it evaluates
+
+| Aspect | Detail |
+|---|---|
+| Task | One agentic round per repository to find and fix **105 planted bugs** across two production TypeScript codebases |
+| Grading | Submitted diffs graded blindly against a withheld answer key |
+| Leaderboard records | Agent harness, effort setting, number of runs, bugs fixed, per-repository result, extra fixes, wall time, cost, evaluation date |
+| Links | [Official leaderboard](https://skillsllm.com/skill/bug-hunt-bench) · [mirror on BenchLM](https://benchlm.ai/benchmarks/bug-hunt-bench) |
+
+## Why it is distinct from [SWE-bench](/AI-benchmarks/coding-agents/)
+
+SWE-bench starts from a real issue description: the agent knows the task it must solve. Bug Hunt asks the agent to inspect a production codebase and locate hidden defects — it exercises several production-relevant behaviors SWE-bench underweights:
+
+- Reading architecture and tracing execution paths without an issue-specific roadmap.
+- Turning signals — tests, static analysis, suspicious code, CLI output — into debugging hypotheses.
+- Choosing which suspected defects to pursue under a limited run budget.
+- Avoiding speculative or low-value changes.
+- Producing a correct patch that satisfies hidden evaluation criteria.
+
+For an internal "autonomous repo health" or proactive maintenance agent, Bug Hunt is the closest public analogue.
+
+## Caveats
+
+- **Narrow coverage:** only two TypeScript repositories — a valuable but limited signal. Don't generalize a Bug Hunt ranking to your stack.
+- **Not a pure model ranking:** results are a **model + harness + effort** combination. A run from one CLI agent at max effort is not comparable to a different harness with different tools, retry policy, or budget. Always read the run configuration alongside the fix count.
+- Compare both the **fix count** and the run configuration: harness, effort/reasoning level, wall-clock time, and cost.
+
+## When to check this on a new model release
+
+When the release targets coding/agent work and autonomous bug discovery matters to your workload: cross-check the Bug Hunt standing against [coding agents](/AI-benchmarks/coding-agents/) results (SWE-bench Verified/Pro, Terminal-Bench, LiveCodeBench) and record the harness/effort configuration with any number you quote. It is step-2 ammunition in the [release-review workflow](/AI-benchmarks/release-review-workflow/), not a standalone verdict.
+
 ## Code Generation
 
 Source: https://miqui.github.io/AI-benchmarks/code-generation/
@@ -10,7 +115,7 @@ Source: https://miqui.github.io/AI-benchmarks/code-generation/
 | Benchmark | What it actually tells you | Link |
 |---|---|---|
 | LiveCodeBench | Fresh, time-controlled code generation; contamination-resistant current signal | [https://livecodebench.github.io/](https://livecodebench.github.io/) |
-| BigCodeBench | Broader, more realistic function/task-level coding coverage | track via [core-leaderboards](core-leaderboards.html) aggregators |
+| BigCodeBench | Broader, more realistic function/task-level coding coverage | track via [core-leaderboards](/AI-benchmarks/core-leaderboards/) aggregators |
 | HumanEval+ | Hardened/extended version of the classic function-completion benchmark | track via aggregators |
 | MBPP+ | Hardened/extended "Mostly Basic Python Problems" benchmark | track via aggregators |
 
@@ -18,7 +123,7 @@ Source: https://miqui.github.io/AI-benchmarks/code-generation/
 
 ## When to check this on a new model release
 
-Use for pure code-generation quality, distinct from agentic coding (see [coding-agents](coding-agents.html)) which measures multi-step repo-level work. Check this when the task is single-function/single-file code generation rather than end-to-end software engineering.
+Use for pure code-generation quality, distinct from agentic coding (see [coding-agents](/AI-benchmarks/coding-agents/)) which measures multi-step repo-level work. Check this when the task is single-function/single-file code generation rather than end-to-end software engineering.
 
 ## Coding Agents
 
@@ -29,7 +134,7 @@ Source: https://miqui.github.io/AI-benchmarks/coding-agents/
 | Evaluation question | Primary leaderboard | What it catches |
 |---|---|---|
 | Can it resolve a reported software issue? | [SWE-bench](https://www.swebench.com/) | Issue-to-patch work; official entries report % instances resolved |
-| Can it autonomously FIND bugs before being told? | [Bug Hunt Bench](https://skillsllm.com/skill/bug-hunt-bench) (mirror: [https://benchlm.ai/benchmarks/bug-hunt-bench](https://benchlm.ai/benchmarks/bug-hunt-bench)) | Exploration, diagnosis, repo understanding under ambiguity |
+| Can it autonomously FIND bugs before being told? | [Bug Hunt Bench](/AI-benchmarks/bug-hunt/) (leaderboard: [skillsllm](https://skillsllm.com/skill/bug-hunt-bench), mirror: [https://benchlm.ai/benchmarks/bug-hunt-bench](https://benchlm.ai/benchmarks/bug-hunt-bench)) | Exploration, diagnosis, repo understanding under ambiguity |
 | Can it work through a terminal? | [Terminal-Bench](https://www.tbench.ai/) | Software/systems/data/tool-driven terminal tasks |
 | Current coding problems without contamination? | [LiveCodeBench](https://livecodebench.github.io/) | Fresh, time-controlled code generation |
 | Accurate code editing across languages? | [Aider leaderboard](https://aider.chat/docs/leaderboards/) | Focused code-editing capability |
@@ -54,7 +159,7 @@ Bug Hunt (and most agentic coding leaderboards) rank a **model + harness + effor
 
 ## When to check this on a new model release
 
-Step 2 of [release-review-workflow](release-review-workflow.html) for a coding release: SWE-bench Verified/Pro + Terminal-Bench + LiveCodeBench, cross-checked against Bug Hunt Bench if autonomous bug discovery matters to your workload. Always record the harness/effort configuration alongside the score, and run your own internal release gate (step 4) mirroring real repos before promoting.
+Step 2 of [release-review-workflow](/AI-benchmarks/release-review-workflow/) for a coding release: SWE-bench Verified/Pro + Terminal-Bench + LiveCodeBench, cross-checked against Bug Hunt Bench if autonomous bug discovery matters to your workload. Always record the harness/effort configuration alongside the score, and run your own internal release gate (step 4) mirroring real repos before promoting.
 
 ## Core Leaderboards
 
@@ -90,7 +195,7 @@ The 12 boards worth knowing, plus aggregators and discovery indexes.
 
 ## When to check this on a new model release
 
-Always — this is step 1 of the [release-review-workflow](release-review-workflow.html). Start with Arena + Artificial Analysis for the broad capability/price/speed profile before drilling into category-specific pages.
+Always — this is step 1 of the [release-review-workflow](/AI-benchmarks/release-review-workflow/). Start with Arena + Artificial Analysis for the broad capability/price/speed profile before drilling into category-specific pages.
 
 ## Efficiency Economics
 
@@ -105,11 +210,11 @@ Source: https://miqui.github.io/AI-benchmarks/efficiency-economics/
 | Provider pricing/latency dashboards | Rate limits, p50/p95 latency, time-to-first-token, context pricing per provider | check each provider directly |
 | Your own load tests | The only source of ground truth for *your* traffic pattern, prompt shape, and concurrency | n/a — internal |
 
-**What it tells you:** Token cost, speed, TTFT, rate limits, context pricing. Per [pitfalls](pitfalls.html): a 5th-place model on capability boards can be the best production choice once cost per successful workflow, p95 latency, and stable tool calling are counted.
+**What it tells you:** Token cost, speed, TTFT, rate limits, context pricing. Per [pitfalls](/AI-benchmarks/pitfalls/): a 5th-place model on capability boards can be the best production choice once cost per successful workflow, p95 latency, and stable tool calling are counted.
 
 ## When to check this on a new model release
 
-Step 1 of [release-review-workflow](release-review-workflow.html), alongside Arena — price/speed/context changes are often the deciding factor even when capability is comparable to the prior model. Also revisit at step 5 (operational validation): rate-limit behavior and regional availability under your real traffic.
+Step 1 of [release-review-workflow](/AI-benchmarks/release-review-workflow/), alongside Arena — price/speed/context changes are often the deciding factor even when capability is comparable to the prior model. Also revisit at step 5 (operational validation): rate-limit behavior and regional availability under your real traffic.
 
 ## General Reasoning
 
@@ -125,11 +230,11 @@ Source: https://miqui.github.io/AI-benchmarks/general-reasoning/
 | Humanity's Last Exam (HLE) | Extremely hard, broad-domain frontier knowledge/reasoning probe | Difficult knowledge/reasoning; not production-domain accuracy |
 | LiveBench | Fresh, contamination-resistant general capability across reasoning, math, coding, language, data analysis | Frequently refreshed questions — best used for cross-model relative ranking rather than absolute score tracking over time |
 
-*The source material lists these benchmark names without dedicated individual URLs; track them via the aggregators in [core-leaderboards](core-leaderboards.html) (Artificial Analysis, BenchLM, llm-stats.com) or via LiveBench directly: [https://livebench.ai*](https://livebench.ai*)
+*The source material lists these benchmark names without dedicated individual URLs; track them via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/) (Artificial Analysis, BenchLM, llm-stats.com) or via LiveBench directly: [https://livebench.ai*](https://livebench.ai*)
 
 ## When to check this on a new model release
 
-Step 2 of the [release-review-workflow](release-review-workflow.html) for a "general" release: LiveBench + GPQA Diamond/MMLU-Pro. Useful as a first filter before task-specific validation (coding, multimodal, agents, etc.) — see [pitfalls](pitfalls.html) on why a high score here doesn't predict production performance.
+Step 2 of the [release-review-workflow](/AI-benchmarks/release-review-workflow/) for a "general" release: LiveBench + GPQA Diamond/MMLU-Pro. Useful as a first filter before task-specific validation (coding, multimodal, agents, etc.) — see [pitfalls](/AI-benchmarks/pitfalls/) on why a high score here doesn't predict production performance.
 
 ## Home
 
@@ -152,7 +257,7 @@ This site tracks the benchmarks and leaderboards worth checking on every new mod
 4. **Run an internal release gate:** 25–100 versioned tests mirroring actual workloads (OpenAPI/MCP tool selection, OAuth-aware calls, schema validation, API error repair, incident analysis, code changes, policy-sensitive tasks). Capture quality, tool-call correctness, latency, token use, cost, failure mode.
 5. **Promote only after operational validation:** rate-limit behavior, structured-output reliability, prompt-injection resistance, privacy posture, regional availability, observability — run a staging canary behind a model gateway.
 
-Full detail: [release-review-workflow](release-review-workflow.html).
+Full detail: [release-review-workflow](/AI-benchmarks/release-review-workflow/).
 
 ## Compact 8-bookmark set
 
@@ -169,9 +274,9 @@ Full detail: [release-review-workflow](release-review-workflow.html).
 
 ## Map of this reference
 
-See the sidebar for all capability pages: [core-leaderboards](core-leaderboards.html), [open-models](open-models.html), [general-reasoning](general-reasoning.html), [math](math.html), [coding-agents](coding-agents.html), [code-generation](code-generation.html), [long-context](long-context.html), [multimodal](multimodal.html), [tool-use-agents](tool-use-agents.html), [rag-retrieval](rag-retrieval.html), [multilingual](multilingual.html), [safety](safety.html), [efficiency-economics](efficiency-economics.html), [pitfalls](pitfalls.html).
+See the sidebar for all capability pages: [core-leaderboards](/AI-benchmarks/core-leaderboards/), [open-models](/AI-benchmarks/open-models/), [general-reasoning](/AI-benchmarks/general-reasoning/), [math](/AI-benchmarks/math/), [coding-agents](/AI-benchmarks/coding-agents/), [bug-hunt](/AI-benchmarks/bug-hunt/), [code-generation](/AI-benchmarks/code-generation/), [long-context](/AI-benchmarks/long-context/), [multimodal](/AI-benchmarks/multimodal/), [tool-use-agents](/AI-benchmarks/tool-use-agents/), [rag-retrieval](/AI-benchmarks/rag-retrieval/), [multilingual](/AI-benchmarks/multilingual/), [safety](/AI-benchmarks/safety/), [efficiency-economics](/AI-benchmarks/efficiency-economics/), [pitfalls](/AI-benchmarks/pitfalls/).
 
-No leaderboard is definitive — see [pitfalls](pitfalls.html) before trusting any single number.
+No leaderboard is definitive — see [pitfalls](/AI-benchmarks/pitfalls/) before trusting any single number.
 
 ## Long Context
 
@@ -188,7 +293,7 @@ Source: https://miqui.github.io/AI-benchmarks/long-context/
 
 **Caveat:** Recall/reasoning with long inputs — synthetic retrieval (especially NIAH) can overstate usable context; a model finding one needle doesn't mean it reasons well across the *whole* long context under real multi-fact, multi-hop conditions.
 
-*Track current standings via the aggregators in [core-leaderboards](core-leaderboards.html).*
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/).*
 
 ## When to check this on a new model release
 
@@ -207,11 +312,11 @@ Source: https://miqui.github.io/AI-benchmarks/math/
 | MATH-500 | Curated hard math problem subset | Symbolic reasoning depth, not applied/agentic math |
 | GSM8K | Grade-school arithmetic word problems | Largely saturated by frontier models; low signal for differentiating top models today |
 
-*Track current standings via the aggregators in [core-leaderboards](core-leaderboards.html) and LiveBench's math slice: [https://livebench.ai*](https://livebench.ai*)
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/) and LiveBench's math slice: [https://livebench.ai*](https://livebench.ai*)
 
 ## When to check this on a new model release
 
-Check if the release targets reasoning/math capability explicitly, or if your workload includes quantitative/symbolic tasks. Treat strong math scores as necessary-not-sufficient: pair with [coding-agents](coding-agents.html) or [tool-use-agents](tool-use-agents.html) if the real task involves using math inside a larger workflow (per [pitfalls](pitfalls.html), contest math doesn't predict tool-using performance).
+Check if the release targets reasoning/math capability explicitly, or if your workload includes quantitative/symbolic tasks. Treat strong math scores as necessary-not-sufficient: pair with [coding-agents](/AI-benchmarks/coding-agents/) or [tool-use-agents](/AI-benchmarks/tool-use-agents/) if the real task involves using math inside a larger workflow (per [pitfalls](/AI-benchmarks/pitfalls/), contest math doesn't predict tool-using performance).
 
 ## Multilingual
 
@@ -223,12 +328,12 @@ Source: https://miqui.github.io/AI-benchmarks/multilingual/
 |---|---|
 | Global-MMLU | Knowledge/reasoning quality across many languages and locales, with cultural-sensitivity annotations |
 | FLORES-200 | Machine translation quality across 200 languages |
-| Multilingual MTEB | Embedding/retrieval quality across languages (subset of the MTEB family — see [rag-retrieval](rag-retrieval.html)) |
+| Multilingual MTEB | Embedding/retrieval quality across languages (subset of the MTEB family — see [rag-retrieval](/AI-benchmarks/rag-retrieval/)) |
 | MGSM | Grade-school math reasoning translated across languages |
 
 **What it tells you:** Quality across languages/locales — critical when a model's English-language benchmark scores don't reflect performance in the languages your users actually use.
 
-*Track current standings via the aggregators in [core-leaderboards](core-leaderboards.html).*
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/).*
 
 ## When to check this on a new model release
 
@@ -254,7 +359,7 @@ Source: https://miqui.github.io/AI-benchmarks/multimodal/
 
 ## When to check this on a new model release
 
-Step 2 of [release-review-workflow](release-review-workflow.html) for a multimodal release: MMMU-Pro + DocVQA/ChartQA + Vision Arena. If your workload is document-specific, weight DocVQA/ChartQA higher than general Arena preference.
+Step 2 of [release-review-workflow](/AI-benchmarks/release-review-workflow/) for a multimodal release: MMMU-Pro + DocVQA/ChartQA + Vision Arena. If your workload is document-specific, weight DocVQA/ChartQA higher than general Arena preference.
 
 ## Open Models
 
@@ -268,13 +373,13 @@ Source: https://miqui.github.io/AI-benchmarks/open-models/
 
 ## Open-weight guidance
 
-- Open-weight models need the same triangulation as closed models: don't trust a single composite score. Cross-check against [core-leaderboards](core-leaderboards.html) (Arena, LiveBench, Artificial Analysis) which include open models alongside frontier ones.
-- Self-hostability changes the economics calculus — pair leaderboard results with [efficiency-economics](efficiency-economics.html) (your own load tests, hosting cost, throughput) rather than relying on hosted-API pricing comparisons.
+- Open-weight models need the same triangulation as closed models: don't trust a single composite score. Cross-check against [core-leaderboards](/AI-benchmarks/core-leaderboards/) (Arena, LiveBench, Artificial Analysis) which include open models alongside frontier ones.
+- Self-hostability changes the economics calculus — pair leaderboard results with [efficiency-economics](/AI-benchmarks/efficiency-economics/) (your own load tests, hosting cost, throughput) rather than relying on hosted-API pricing comparisons.
 - Licensing and fine-tunability matter as much as raw score for open models; the leaderboard doesn't capture license terms — check them separately per model card.
 
 ## When to check this on a new model release
 
-When the release is open-weight (or you're evaluating self-hosting), use this leaderboard for a standardized comparison point, then validate with [general-reasoning](general-reasoning.html), [coding-agents](coding-agents.html), or whichever capability page matches your use case, plus your own release gate (step 4 of [release-review-workflow](release-review-workflow.html)).
+When the release is open-weight (or you're evaluating self-hosting), use this leaderboard for a standardized comparison point, then validate with [general-reasoning](/AI-benchmarks/general-reasoning/), [coding-agents](/AI-benchmarks/coding-agents/), or whichever capability page matches your use case, plus your own release gate (step 4 of [release-review-workflow](/AI-benchmarks/release-review-workflow/)).
 
 ## Pitfalls
 
@@ -298,7 +403,7 @@ Avoid composite "best model" boards as primary truth — a single blended rankin
 
 ## Harness confounds
 
-Agentic benchmarks (SWE-bench, Bug Hunt Bench, Terminal-Bench, GAIA, tau-bench) rank a **model + harness + effort/reasoning-level + tool access + retry policy + compute budget** combination, not a pure foundation-model capability. Two entries using the same base model but different harnesses or effort settings are not comparable. See [coding-agents](coding-agents.html) for the detailed Bug Hunt Bench example.
+Agentic benchmarks (SWE-bench, Bug Hunt Bench, Terminal-Bench, GAIA, tau-bench) rank a **model + harness + effort/reasoning-level + tool access + retry policy + compute budget** combination, not a pure foundation-model capability. Two entries using the same base model but different harnesses or effort settings are not comparable. See [coding-agents](/AI-benchmarks/coding-agents/) for the detailed Bug Hunt Bench example.
 
 ## "5th place can win in production"
 
@@ -309,7 +414,7 @@ A model ranked 5th on a capability leaderboard can be the best production choice
 - data handling and context window fit
 - cost per *successful* workflow (not just cost per token)
 
-Triangulate: human preference ([core-leaderboards](core-leaderboards.html)) + fresh contamination-resistant tests ([general-reasoning](general-reasoning.html)) + real agent evals ([tool-use-agents](tool-use-agents.html), [coding-agents](coding-agents.html)) + multimodal ([multimodal](multimodal.html)) + deployment economics ([efficiency-economics](efficiency-economics.html)) — then run your own internal release gate (step 4 of [release-review-workflow](release-review-workflow.html)) before trusting any single board's ranking for a production decision.
+Triangulate: human preference ([core-leaderboards](/AI-benchmarks/core-leaderboards/)) + fresh contamination-resistant tests ([general-reasoning](/AI-benchmarks/general-reasoning/)) + real agent evals ([tool-use-agents](/AI-benchmarks/tool-use-agents/), [coding-agents](/AI-benchmarks/coding-agents/)) + multimodal ([multimodal](/AI-benchmarks/multimodal/)) + deployment economics ([efficiency-economics](/AI-benchmarks/efficiency-economics/)) — then run your own internal release gate (step 4 of [release-review-workflow](/AI-benchmarks/release-review-workflow/)) before trusting any single board's ranking for a production decision.
 
 ## Rag Retrieval
 
@@ -328,7 +433,7 @@ Source: https://miqui.github.io/AI-benchmarks/rag-retrieval/
 
 ## When to check this on a new model release
 
-Step 2 of [release-review-workflow](release-review-workflow.html) for an embeddings release: MTEB + your own corpus eval. Treat MTEB as a candidate shortlist filter, not a final decision — validate top candidates against your actual retrieval task before switching production embedding models.
+Step 2 of [release-review-workflow](/AI-benchmarks/release-review-workflow/) for an embeddings release: MTEB + your own corpus eval. Treat MTEB as a candidate shortlist filter, not a final decision — validate top candidates against your actual retrieval task before switching production embedding models.
 
 ## Release Review Workflow
 
@@ -338,16 +443,16 @@ Source: https://miqui.github.io/AI-benchmarks/release-review-workflow/
 
 The full 5-step checklist to run whenever a new model (or a new version of an existing model) is released.
 
-1. **Start with Arena + Artificial Analysis.** Human preference, capability profile, context window, pricing, throughput, availability. See [core-leaderboards](core-leaderboards.html) and [efficiency-economics](efficiency-economics.html).
+1. **Start with Arena + Artificial Analysis.** Human preference, capability profile, context window, pricing, throughput, availability. See [core-leaderboards](/AI-benchmarks/core-leaderboards/) and [efficiency-economics](/AI-benchmarks/efficiency-economics/).
 
 2. **Validate in the relevant category:**
-   - **General** → [LiveBench](general-reasoning.html) + GPQA Diamond/MMLU-Pro
-   - **Coding** → [SWE-bench Verified/Pro + Terminal-Bench + LiveCodeBench](coding-agents.html)
-   - **Multimodal** → [MMMU-Pro + DocVQA/ChartQA + Vision Arena](multimodal.html)
-   - **Embeddings** → [MTEB + own corpus eval](rag-retrieval.html)
-   - **Agents** → [GAIA/tau-bench/Toolathlon + internal tool-call trace eval](tool-use-agents.html)
+   - **General** → [LiveBench](/AI-benchmarks/general-reasoning/) + GPQA Diamond/MMLU-Pro
+   - **Coding** → [SWE-bench Verified/Pro + Terminal-Bench + LiveCodeBench](/AI-benchmarks/coding-agents/)
+   - **Multimodal** → [MMMU-Pro + DocVQA/ChartQA + Vision Arena](/AI-benchmarks/multimodal/)
+   - **Embeddings** → [MTEB + own corpus eval](/AI-benchmarks/rag-retrieval/)
+   - **Agents** → [GAIA/tau-bench/Toolathlon + internal tool-call trace eval](/AI-benchmarks/tool-use-agents/)
 
-3. **Read the evaluation protocol, not just the number.** Model version/date, prompting policy, reasoning mode, tools enabled, agent scaffold, retries, test-time compute, cost cap, vendor-reported vs. independently reproduced. This is the single most-skipped step and the source of most mis-ranked comparisons (see [coding-agents](coding-agents.html)'s model+harness+effort caveat).
+3. **Read the evaluation protocol, not just the number.** Model version/date, prompting policy, reasoning mode, tools enabled, agent scaffold, retries, test-time compute, cost cap, vendor-reported vs. independently reproduced. This is the single most-skipped step and the source of most mis-ranked comparisons (see [coding-agents](/AI-benchmarks/coding-agents/)'s model+harness+effort caveat).
 
 4. **Run an internal release gate.** 25–100 versioned tests mirroring actual workloads:
    - OpenAPI/MCP tool selection
@@ -362,7 +467,7 @@ The full 5-step checklist to run whenever a new model (or a new version of an ex
 
 5. **Promote only after operational validation.** Rate-limit behavior, structured-output reliability, prompt-injection resistance, privacy posture, regional availability, observability. Run a **staging canary behind a model gateway** before full rollout.
 
-See [pitfalls](pitfalls.html) for the failure modes this workflow is designed to catch.
+See [pitfalls](/AI-benchmarks/pitfalls/) for the failure modes this workflow is designed to catch.
 
 ## Safety
 
@@ -378,11 +483,11 @@ Source: https://miqui.github.io/AI-benchmarks/safety/
 | HarmBench | Standardized red-teaming/jailbreak-resistance evaluation | track via aggregators |
 | WildGuard | Safety moderation and harmful-content detection evaluation | track via aggregators |
 
-**What it tells you:** Robustness, refusal behavior, bias, and jailbreak resilience. Scale AI's SEAL leaderboard (see [core-leaderboards](core-leaderboards.html)) also includes 20+ safety-alignment benchmarks.
+**What it tells you:** Robustness, refusal behavior, bias, and jailbreak resilience. Scale AI's SEAL leaderboard (see [core-leaderboards](/AI-benchmarks/core-leaderboards/)) also includes 20+ safety-alignment benchmarks.
 
 ## When to check this on a new model release
 
-Part of step 5 (operational validation) in [release-review-workflow](release-review-workflow.html): prompt-injection resistance and privacy posture specifically. Always cross-check safety claims against your own adversarial testing — safety benchmarks are especially prone to the self-reported-score and vendor-optimization issues covered in [pitfalls](pitfalls.html).
+Part of step 5 (operational validation) in [release-review-workflow](/AI-benchmarks/release-review-workflow/): prompt-injection resistance and privacy posture specifically. Always cross-check safety claims against your own adversarial testing — safety benchmarks are especially prone to the self-reported-score and vendor-optimization issues covered in [pitfalls](/AI-benchmarks/pitfalls/).
 
 ## Tool Use Agents
 
@@ -402,8 +507,8 @@ Source: https://miqui.github.io/AI-benchmarks/tool-use-agents/
 
 **Relevance to MCP:** Toolathlon and BFCL are the most directly relevant to MCP-based tool orchestration — check schema adherence and multi-tool sequencing specifically, not just single-call accuracy.
 
-*Track current standings via the aggregators in [core-leaderboards](core-leaderboards.html).*
+*Track current standings via the aggregators in [core-leaderboards](/AI-benchmarks/core-leaderboards/).*
 
 ## When to check this on a new model release
 
-Step 2 of [release-review-workflow](release-review-workflow.html) for an agentic release: GAIA/tau-bench/Toolathlon + your own internal tool-call trace eval. This is also where the step-4 internal release gate matters most — OpenAPI/MCP tool selection, OAuth-aware calls, schema validation, and API error repair rarely show up fully in public boards.
+Step 2 of [release-review-workflow](/AI-benchmarks/release-review-workflow/) for an agentic release: GAIA/tau-bench/Toolathlon + your own internal tool-call trace eval. This is also where the step-4 internal release gate matters most — OpenAPI/MCP tool selection, OAuth-aware calls, schema validation, and API error repair rarely show up fully in public boards.

@@ -10,6 +10,7 @@
 - [General Reasoning](https://miqui.github.io/AI-benchmarks/general-reasoning/): MMLU-Pro, GPQA Diamond, SimpleBench, Humanity's Last Exam, LiveBench — difficult knowledge and reasoning, not production-domain accuracy
 - [Math](https://miqui.github.io/AI-benchmarks/math/): AIME, HMMT, MATH-500, GSM8K — symbolic and contest-style problem solving
 - [Coding Agents](https://miqui.github.io/AI-benchmarks/coding-agents/): SWE-bench (Verified/Pro), Terminal-Bench, Bug Hunt Bench, LiveCodeBench, Aider, Artificial Analysis coding agents; includes the find-bugs-vs-fix-issue distinction and the model+harness+effort caveat
+- [Bug Hunt Bench](https://miqui.github.io/AI-benchmarks/bug-hunt/): Autonomous bug discovery and repair - 105 planted bugs across two production TypeScript codebases, blind-graded; model+harness+effort ranking caveat
 - [Code Generation](https://miqui.github.io/AI-benchmarks/code-generation/): LiveCodeBench, BigCodeBench, HumanEval+, MBPP+ — function-level coding ability
 - [Long Context](https://miqui.github.io/AI-benchmarks/long-context/): RULER, LongBench v2, InfiniteBench, needle-in-a-haystack variants — usable-context recall, not advertised window size
 - [Multimodal](https://miqui.github.io/AI-benchmarks/multimodal/): MMMU/MMMU-Pro, MathVista, ChartQA, DocVQA, Video-MME, Vision Arena, VLMEvalKit — visual, document, chart, and video understanding
