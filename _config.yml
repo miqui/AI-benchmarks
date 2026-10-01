@@ -1,19 +1,25 @@
 title: AI Benchmarks
 description: A durable reference of the most popular AI leaderboards and benchmarks, updated per model release.
-remote_theme: just-the-docs/just-the-docs
-search_enabled: true
-heading_anchors: true
-nav_sort: pages
+remote_theme: daattali/beautiful-jekyll@6.0.1
+post_search: true
 permalink: pretty
+baseurl: "/AI-benchmarks"
 
 plugins:
   - jekyll-remote-theme
 
 defaults:
   - scope:
-      path: "docs"
+      path: ""
+      type: "pages"
     values:
-      layout: default
+      layout: page
+
+navbar-links:
+  Home: "/"
+  Core Leaderboards: "/core-leaderboards"
+  Coding Agents: "/coding-agents"
+  Pitfalls: "/pitfalls"
 
 aux_links:
   "GitHub repo":
