@@ -8,7 +8,7 @@ nav_order: 6
 | Evaluation question | Primary leaderboard | What it catches |
 |---|---|---|
 | Can it resolve a reported software issue? | [SWE-bench](https://www.swebench.com/) | Issue-to-patch work; official entries report % instances resolved |
-| Can it autonomously FIND bugs before being told? | [Bug Hunt Bench](https://skillsllm.com/skill/bug-hunt-bench) (mirror: https://benchlm.ai/benchmarks/bug-hunt-bench) | Exploration, diagnosis, repo understanding under ambiguity |
+| Can it autonomously FIND bugs before being told? | [Bug Hunt Bench](https://skillsllm.com/skill/bug-hunt-bench) (mirror: [https://benchlm.ai/benchmarks/bug-hunt-bench](https://benchlm.ai/benchmarks/bug-hunt-bench)) | Exploration, diagnosis, repo understanding under ambiguity |
 | Can it work through a terminal? | [Terminal-Bench](https://www.tbench.ai/) | Software/systems/data/tool-driven terminal tasks |
 | Current coding problems without contamination? | [LiveCodeBench](https://livecodebench.github.io/) | Fresh, time-controlled code generation |
 | Accurate code editing across languages? | [Aider leaderboard](https://aider.chat/docs/leaderboards/) | Focused code-editing capability |

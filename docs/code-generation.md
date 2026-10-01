@@ -7,7 +7,7 @@ nav_order: 7
 
 | Benchmark | What it actually tells you | Link |
 |---|---|---|
-| LiveCodeBench | Fresh, time-controlled code generation; contamination-resistant current signal | https://livecodebench.github.io/ |
+| LiveCodeBench | Fresh, time-controlled code generation; contamination-resistant current signal | [https://livecodebench.github.io/](https://livecodebench.github.io/) |
 | BigCodeBench | Broader, more realistic function/task-level coding coverage | track via [core-leaderboards](core-leaderboards.html) aggregators |
 | HumanEval+ | Hardened/extended version of the classic function-completion benchmark | track via aggregators |
 | MBPP+ | Hardened/extended "Mostly Basic Python Problems" benchmark | track via aggregators |

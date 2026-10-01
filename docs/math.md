@@ -12,7 +12,7 @@ nav_order: 5
 | MATH-500 | Curated hard math problem subset | Symbolic reasoning depth, not applied/agentic math |
 | GSM8K | Grade-school arithmetic word problems | Largely saturated by frontier models; low signal for differentiating top models today |
 
-*Track current standings via the aggregators in [core-leaderboards](core-leaderboards.html) and LiveBench's math slice: https://livebench.ai*
+*Track current standings via the aggregators in [core-leaderboards](core-leaderboards.html) and LiveBench's math slice: [https://livebench.ai*](https://livebench.ai*)
 
 ## When to check this on a new model release
 

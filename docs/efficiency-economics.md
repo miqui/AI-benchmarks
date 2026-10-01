@@ -7,8 +7,8 @@ nav_order: 14
 
 | Source | What it actually tells you | Link |
 |---|---|---|
-| Artificial Analysis | Token cost, speed, context pricing, and deployment tradeoffs across frontier and open models | https://artificialanalysis.ai |
-| Artificial Analysis Coding Agents | Coding-agent quality/cost/execution-time comparison layer | https://artificialanalysis.ai/agents/coding-agents |
+| Artificial Analysis | Token cost, speed, context pricing, and deployment tradeoffs across frontier and open models | [https://artificialanalysis.ai](https://artificialanalysis.ai) |
+| Artificial Analysis Coding Agents | Coding-agent quality/cost/execution-time comparison layer | [https://artificialanalysis.ai/agents/coding-agents](https://artificialanalysis.ai/agents/coding-agents) |
 | Provider pricing/latency dashboards | Rate limits, p50/p95 latency, time-to-first-token, context pricing per provider | check each provider directly |
 | Your own load tests | The only source of ground truth for *your* traffic pattern, prompt shape, and concurrency | n/a — internal |
 

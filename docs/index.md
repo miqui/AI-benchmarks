@@ -27,14 +27,14 @@ Full detail: [release-review-workflow](release-review-workflow.html).
 
 | # | Leaderboard | Best for | Link |
 |---|---|---|---|
-| 1 | Arena | Human preference | https://arena.ai/leaderboard |
-| 2 | Artificial Analysis | Performance / speed / cost | https://artificialanalysis.ai |
-| 3 | LiveBench | Fresh general capability | https://livebench.ai |
-| 4 | Scale Leaderboard | Expert frontier / agent / safety | https://labs.scale.com/leaderboard |
-| 5 | SWE-bench | Repo-level software engineering | https://www.swebench.com |
-| 6 | Terminal-Bench | Terminal/CLI coding agents | https://www.tbench.ai |
-| 7 | MTEB | Embeddings and retrieval | https://huggingface.co/spaces/mteb/leaderboard |
-| 8 | HF Open LLM Leaderboard | Open-weight models | https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard |
+| 1 | Arena | Human preference | [https://arena.ai/leaderboard](https://arena.ai/leaderboard) |
+| 2 | Artificial Analysis | Performance / speed / cost | [https://artificialanalysis.ai](https://artificialanalysis.ai) |
+| 3 | LiveBench | Fresh general capability | [https://livebench.ai](https://livebench.ai) |
+| 4 | Scale Leaderboard | Expert frontier / agent / safety | [https://labs.scale.com/leaderboard](https://labs.scale.com/leaderboard) |
+| 5 | SWE-bench | Repo-level software engineering | [https://www.swebench.com](https://www.swebench.com) |
+| 6 | Terminal-Bench | Terminal/CLI coding agents | [https://www.tbench.ai](https://www.tbench.ai) |
+| 7 | MTEB | Embeddings and retrieval | [https://huggingface.co/spaces/mteb/leaderboard](https://huggingface.co/spaces/mteb/leaderboard) |
+| 8 | HF Open LLM Leaderboard | Open-weight models | [https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard) |
 
 ## Map of this reference
 

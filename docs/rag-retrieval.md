@@ -7,7 +7,7 @@ nav_order: 11
 
 | Benchmark | What it actually tells you | Link |
 |---|---|---|
-| MTEB | Multi-task benchmark family for embedding models: retrieval, reranking, STS, classification, clustering, multilingual | https://huggingface.co/spaces/mteb/leaderboard |
+| MTEB | Multi-task benchmark family for embedding models: retrieval, reranking, STS, classification, clustering, multilingual | [https://huggingface.co/spaces/mteb/leaderboard](https://huggingface.co/spaces/mteb/leaderboard) |
 | BEIR | Zero-shot retrieval benchmark across heterogeneous domains and task types | track via aggregators |
 | MIRACL | Multilingual retrieval benchmark | track via aggregators |
 | LoCoV0 | Long-context retrieval benchmark | track via aggregators |

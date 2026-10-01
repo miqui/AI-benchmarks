@@ -12,8 +12,8 @@ nav_order: 9
 | ChartQA | Chart understanding and question answering | track via aggregators |
 | DocVQA | Document image question answering (forms, scans, layouts) | track via aggregators |
 | Video-MME | Multimodal understanding over video input | track via aggregators |
-| LMSYS / Vision Arena | Head-to-head human preference for visual understanding and multimodal chat | https://arena.ai |
-| VLMEvalKit leaderboard | Broad, reproducible VLM evaluation across many visual QA and reasoning datasets | https://github.com/open-compass/VLMEvalKit |
+| LMSYS / Vision Arena | Head-to-head human preference for visual understanding and multimodal chat | [https://arena.ai](https://arena.ai) |
+| VLMEvalKit leaderboard | Broad, reproducible VLM evaluation across many visual QA and reasoning datasets | [https://github.com/open-compass/VLMEvalKit](https://github.com/open-compass/VLMEvalKit) |
 
 **What this family tells you:** Visual/document/chart/math/video understanding. No single board covers all modalities equally — triangulate per modality that matters to your use case (document-heavy vs. chart-heavy vs. video).
 
