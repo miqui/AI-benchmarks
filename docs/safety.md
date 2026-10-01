@@ -7,7 +7,7 @@ nav_order: 13
 
 | Benchmark | What it actually tells you | Link |
 |---|---|---|
-| Stanford HELM | Transparent, multidimensional evaluation: scenarios, robustness, fairness, toxicity, efficiency, transparency | https://crfm.stanford.edu/helm |
+| Stanford HELM | Transparent, multidimensional evaluation: scenarios, robustness, fairness, toxicity, efficiency, transparency | [https://crfm.stanford.edu/helm](https://crfm.stanford.edu/helm) |
 | DecodingTrust | Trustworthiness across toxicity, bias, robustness, privacy, ethics, fairness | track via aggregators |
 | SafetyBench | Multiple-choice safety-knowledge and risk-awareness evaluation | track via aggregators |
 | HarmBench | Standardized red-teaming/jailbreak-resistance evaluation | track via aggregators |

@@ -7,7 +7,7 @@ nav_order: 3
 
 | Benchmark | What it actually tells you | Link |
 |---|---|---|
-| Hugging Face Open LLM Leaderboard | Standardized harness results across open-weight models; the essential reference for self-hostable candidates. | https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard |
+| Hugging Face Open LLM Leaderboard | Standardized harness results across open-weight models; the essential reference for self-hostable candidates. | [https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard) |
 
 ## Open-weight guidance
 
