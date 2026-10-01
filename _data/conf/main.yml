@@ -77,7 +77,7 @@ search_list_hide_mouseleave: false
 # when using mobile browser, search result is shown while typing, but you need to push search button on keyboard.
 # with this option search only is triggered when you finish input.
 # when using pc browser after input, push enter to search.
-search_disable_auto_search: true
+search_disable_auto_search: false
 
 # to disable auto complete for search box
 # since search bar uses dropdown list style.
@@ -86,7 +86,7 @@ search_disable_auto_complete: true
 
 # search with uri parameter on page load
 # ex. https://your_github_user_name.github.io/?search="hello"
-search_with_uri: true
+search_with_uri: false
 
 ###########################################################
 #                Image Viewer

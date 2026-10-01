@@ -9,11 +9,9 @@
     {%- capture autocomplete %}autocomplete="off"{% endcapture -%}
   {%- endif %}
   <form id="searchbox-form" {{autocomplete}}>
-    <input type="search" id="search-box" placeholder="{{ site.data.lang[lng].search.placeholder }}"
-    onkeyup="if(this.value!==''){document.getElementById('search-results').style.display = 'block';}"
-    onfocusout="this.value='';"
-    onblur="setTimeout(function(){ document.getElementById('search-results').style.display = 'none'; }, 100);">
-    {% comment %} close search result if the mouse cursor leaves the result div {% endcomment -%}
+      <input type="search" id="search-box" placeholder="{{ site.data.lang[lng].search.placeholder }}"
+      onkeyup="if(this.value!==''){document.getElementById('search-results').style.display = 'block';}">
+      {% comment %} close search result if the mouse cursor leaves the result div {% endcomment %}
     {%- if site.data.conf.main.search_list_hide_mouseleave ==  true -%}
       {%- comment %} close search result with mouse click {% endcomment -%}
       {%- capture hide_mouseleave -%} onmouseleave="document.getElementById('search-results').style.display = 'none';" {%- endcapture -%}
@@ -21,3 +19,15 @@
     <ul id="search-results" {{ hide_mouseleave }}></ul>
   </form>
 </div>
+
+<script>
+  (function () {
+    document.addEventListener('click', function (e) {
+      var form = document.getElementById('searchbox-form');
+      if (form && !form.contains(e.target)) {
+        var results = document.getElementById('search-results');
+        if (results) results.style.display = 'none';
+      }
+    });
+  })();
+</script>
