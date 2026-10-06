@@ -15,7 +15,7 @@ Autonomous bug discovery and repair: the agent gets repositories **without being
 | Task | One agentic round per repository to find and fix **105 planted bugs** across two production TypeScript codebases |
 | Grading | Submitted diffs graded blindly against a withheld answer key |
 | Leaderboard records | Agent harness, effort setting, number of runs, bugs fixed, per-repository result, extra fixes, wall time, cost, evaluation date |
-| Links | [Official leaderboard](https://skillsllm.com/skill/bug-hunt-bench) · [mirror on BenchLM](https://benchlm.ai/benchmarks/bug-hunt-bench) |
+| Links | [Official leaderboard](https://skillsllm.com/skill/bug-hunt-bench) · [mirror on BenchLM](https://benchlm.ai/benchmarks/bug-hunt-bench) · [Product Compass board](https://bughunt.productcompass.pm/?preset=featured) |
 
 ## Why it is distinct from [SWE-bench](/AI-benchmarks/coding-agents/)
 
