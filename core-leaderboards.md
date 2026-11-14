@@ -27,6 +27,7 @@ The 12 boards worth knowing, plus aggregators and discovery indexes.
 
 - **Artificial Analysis** — see above.
 - **BenchLM** — tracks hundreds of models with benchmark-level breakdowns. [https://benchlm.ai/](https://benchlm.ai/)
+- **AIHOT** — Chinese-language rankings of open-weight and API models, combining public scores measured by independent evaluators. The site links the source leaderboards and documents its scoring method. [https://aihot.news/leaderboard](https://aihot.news/leaderboard)
 - **AI Release Tracker** — discovery index of new releases and benchmarks. [https://aireleasetracker.com/benchmark](https://aireleasetracker.com/benchmark)
 - **AOE AI Technology Radar** — model/platform leaderboard radar. [https://ai-radar.aoe.com/models-platforms/model_leaderboards/](https://ai-radar.aoe.com/models-platforms/model_leaderboards/)
 - **llm-stats.com** — cross-model stats aggregator. [https://llm-stats.com/](https://llm-stats.com/)
